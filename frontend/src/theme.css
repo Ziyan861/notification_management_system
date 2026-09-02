@@ -1,0 +1,168 @@
+:root {
+  --nms-bg: #08060d;
+  --nms-surface: rgba(28, 18, 46, 0.66);
+  --nms-surface-solid: #150e24;
+  --nms-border: rgba(168, 120, 255, 0.22);
+  --nms-border-strong: rgba(168, 120, 255, 0.45);
+  --nms-purple: #a855f7;
+  --nms-purple-bright: #c084fc;
+  --nms-indigo: #6366f1;
+  --nms-text: #ece7f5;
+  --nms-muted: #9a8fb4;
+  --nms-mono: ui-monospace, 'Cascadia Code', 'JetBrains Mono', 'Fira Code',
+    Menlo, Consolas, monospace;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--nms-bg);
+  background-image:
+    radial-gradient(60rem 40rem at 12% -10%, rgba(124, 58, 237, 0.28), transparent 60%),
+    radial-gradient(45rem 35rem at 95% 0%, rgba(99, 102, 241, 0.22), transparent 55%),
+    radial-gradient(50rem 40rem at 50% 115%, rgba(192, 132, 252, 0.14), transparent 60%);
+  background-attachment: fixed;
+  color: var(--nms-text);
+}
+
+h1, h2, h3, h4, h5, .nms-mono {
+  font-family: var(--nms-mono);
+  letter-spacing: -0.02em;
+}
+
+/* ---------- surfaces ---------- */
+
+.nms-panel {
+  background: var(--nms-surface);
+  border: 1px solid var(--nms-border);
+  border-radius: 0.9rem;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.45);
+}
+
+.nms-panel-tight {
+  padding: 1.25rem;
+}
+
+/* ---------- navbar ---------- */
+
+.nms-nav {
+  background: rgba(12, 8, 20, 0.82);
+  border-bottom: 1px solid var(--nms-border);
+  backdrop-filter: blur(16px);
+}
+
+.nms-brand {
+  font-family: var(--nms-mono);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(100deg, var(--nms-purple-bright), var(--nms-indigo));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nms-nav .nav-link {
+  color: var(--nms-muted);
+  font-family: var(--nms-mono);
+  font-size: 0.9rem;
+}
+
+.nms-nav .nav-link:hover,
+.nms-nav .nav-link.active {
+  color: var(--nms-purple-bright);
+}
+
+/* ---------- buttons ---------- */
+
+.btn-nms {
+  background: linear-gradient(100deg, #7c3aed, #a855f7);
+  border: 1px solid var(--nms-border-strong);
+  color: #fff;
+  font-weight: 600;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.btn-nms:hover:not(:disabled) {
+  filter: brightness(1.15);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn-nms:disabled {
+  opacity: 0.55;
+}
+
+.btn-nms-ghost {
+  background: transparent;
+  border: 1px solid var(--nms-border);
+  color: var(--nms-muted);
+}
+
+.btn-nms-ghost:hover {
+  border-color: var(--nms-border-strong);
+  color: var(--nms-purple-bright);
+}
+
+/* ---------- forms ---------- */
+
+.form-control,
+.form-select {
+  background-color: rgba(10, 7, 17, 0.72);
+  border: 1px solid var(--nms-border);
+  color: var(--nms-text);
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: rgba(10, 7, 17, 0.9);
+  border-color: var(--nms-purple);
+  color: var(--nms-text);
+  box-shadow: 0 0 0 0.2rem rgba(168, 85, 247, 0.22);
+}
+
+.form-control::placeholder {
+  color: rgba(154, 143, 180, 0.6);
+}
+
+.form-label {
+  color: var(--nms-muted);
+  font-family: var(--nms-mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- category accents ---------- */
+
+.nms-cat-INFO {
+  --cat: #60a5fa;
+}
+.nms-cat-WARNING {
+  --cat: #fbbf24;
+}
+.nms-cat-ERROR {
+  --cat: #fb7185;
+}
+
+.nms-cat-bar {
+  border-left: 3px solid var(--cat);
+}
+
+.nms-badge {
+  font-family: var(--nms-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.35rem;
+  color: var(--cat);
+  border: 1px solid color-mix(in srgb, var(--cat) 45%, transparent);
+  background: color-mix(in srgb, var(--cat) 12%, transparent);
+}
+
+.text-nms-muted {
+  color: var(--nms-muted);
+}
+
+a {
+  color: var(--nms-purple-bright);
+}
